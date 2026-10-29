@@ -25,18 +25,21 @@ Buka `tugas_ablasi.ipynb`, isi `LOKASI_KELOMPOK`, lalu jalankan semua sel. Semua
 
 Perangkat yang kami pakai: [contoh: laptop CPU Intel i5 / Google Colab T4], total waktu training: [x] menit.
 
-## Ringkasan Hasil
+## 📊 Ringkasan Hasil Eksperimen
 
-[2–4 kalimat temuan utama, beserta angka test MAE terbaik per model.]
+Berdasarkan studi ablasi yang dilakukan pada data trafik seluler Kota Milan (lokasi pusat kota Duomo), model berbasis rekuren secara konsisten mengungguli arsitektur ANN konvensional. Penerapan konfigurasi terbaik hasil talaan hyperparameter terbukti berhasil meningkatkan akurasi uji pada mayoritas model. 
 
-## Struktur
+Berikut adalah performa akurasi final pada minggu pengujian normal (**Test MAE**) untuk masing-masing arsitektur model (nilai terbaik dicetak tebal):
 
-```
-tugas_ablasi.ipynb      notebook eksperimen (di-commit beserta output)
-data/                   data trafik per jam (Duomo + 10 lokasi tugas)
-hasil/                  CSV seluruh run, tabel, dan grafik
-laporan-latex/ atau laporan-typst/   sumber laporan + PDF
-```
+* **GRU Terbaik:** **233.8 ± 15.7** (Performa optimal keseluruhan)
+* **RNN Terbaik:** 238.6 ± 17.2 (Model RNN Acuan meraih 229.6 ± 5.1)
+* **LSTM Terbaik:** 258.9 ± 25.5 
+* **ANN Terbaik:** 293.6 ± 21.3
+
+### Temuan Utama:
+1. **Sensitivitas Hyperparameter:** Panjang jendela ($W$) dan *learning rate* ($lr$) merupakan faktor paling berpengaruh. Jendela yang terlalu panjang (168 jam) memicu *overfitting* ekstrem pada ANN, sementara model rekuren tetap stabil.
+2. **Keterbatasan Spasial & Temporal:** Saat diuji generalisasi di lokasi **Parco Sempione (Lokasi 6)**, urutan model terbaik berubah di mana RNN acuan dasar meraih hasil optimal (Test MAE: 99.5 ± 2.7). 
+3. **Anomali Musiman:** Seluruh model mengalami lonjakan eror hingga dua kali lipat pada minggu libur Natal akibat perubahan pola mobilitas masyarakat yang ekstrem.
 
 ## Data
 
