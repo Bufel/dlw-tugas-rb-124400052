@@ -12,7 +12,7 @@ Tugas Workshop Deep Learning — Teknik Telekomunikasi ITERA.
 
 - **Kelas:** [RB]
 - **Lokasi kelompok:** [5455] — [Parco Sempione] (6)
-- **Laporan:** [`laporan-latex/main.pdf` atau `laporan-typst/main.pdf`]
+- **Laporan:** [(https://github.com/Bufel/dlw-tugas-rb-124400052/blob/main/laporan-typst/main.pdf)]
 
 ## Cara Menjalankan
 
@@ -23,7 +23,7 @@ uv run jupyter lab
 
 Buka `tugas_ablasi.ipynb`, isi `LOKASI_KELOMPOK`, lalu jalankan semua sel. Semua run tercatat di `hasil/ablasi.csv`.
 
-Perangkat yang kami pakai: [contoh: laptop CPU Intel i5 / Google Colab T4], total waktu training: [x] menit.
+Perangkat yang kami pakai: Intel i3-1115G4 / VS Code, total waktu training : 130.7 menit
 
 ## 📊 Ringkasan Hasil Eksperimen
 
