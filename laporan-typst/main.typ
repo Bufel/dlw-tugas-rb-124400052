@@ -13,8 +13,8 @@
   // Satu entri per anggota (maks. 3). Hapus yang tidak dipakai.
   authors: (
     (name: "Tyodonrau", department: [NIM 124400052], organization: [Teknik Telekomunikasi, ITERA], email: "tyodonrau.124400052@student.itera.ac.id"),
-    (name: "Adryan Ari Nur Hakim P", department: [NIM 124400026], organization: [Teknik Telekomunikasi, ITERA], email: "email@student.itera.ac.id"),
-    (name: "Joan Felix Tampubolon", department: [NIM 124400088], organization: [Teknik Telekomunikasi, ITERA], email: "email@student.itera.ac.id"),
+    (name: "Adryan Ari Nur Hakim P", department: [NIM 124400026], organization: [Teknik Telekomunikasi, ITERA], email: "adryan.124400026@student.itera.ac.id"),
+    (name: "Joan Felix Tampubolon", department: [NIM 124400088], organization: [Teknik Telekomunikasi, ITERA], email: "joan.124400088@student.itera.ac.id"),
   ),
   index-terms: ("prediksi trafik seluler", "RNN", "LSTM", "GRU", "studi ablasi"),
   bibliography: bibliography("references.bib", title: [Pustaka]),
