@@ -12,7 +12,7 @@ Tugas Workshop Deep Learning — Teknik Telekomunikasi ITERA.
 
 - **Kelas:** [RB]
 - **Lokasi kelompok:** [5455] — [Parco Sempione] (6)
-- **Laporan:** [(https://github.com/Bufel/dlw-tugas-rb-124400052/blob/main/laporan-typst/main.pdf)]
+- **Laporan:** [https://github.com/Bufel/dlw-tugas-rb-124400052/blob/main/laporan-typst/main.pdf]
 
 ## Cara Menjalankan
 
