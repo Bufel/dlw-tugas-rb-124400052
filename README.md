@@ -1,4 +1,4 @@
-# Studi Ablasi RNN, LSTM, GRU vs ANN untuk Prediksi Trafik Seluler Milan
+# Studi Ablasi RNN, LSTM, GRU vs ANN untuk Prediksi Trafik Seluler Taman Kota Parco Sempione
 
 Tugas Workshop Deep Learning — Teknik Telekomunikasi ITERA.
 
