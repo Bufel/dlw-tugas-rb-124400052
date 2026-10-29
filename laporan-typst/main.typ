@@ -16,15 +16,15 @@
 #let petunjuk(isi) = text(fill: gray.darken(20%))[[#isi]]
 
 #show: ieee.with(
-  title: [Studi Ablasi RNN, LSTM, dan GRU dibandingkan ANN untuk Prediksi Trafik Seluler Kota Milan],
+  title: [Studi Ablasi RNN, LSTM, dan GRU dibandingkan ANN untuk Prediksi Trafik Seluler Taman Kota Parco Sempione],
   abstract: [
     #petunjuk[150–200 kata. Tuliskan: masalah (prediksi trafik internet per jam), data (Telecom Italia, kotak Duomo dan lokasi kelompok), apa yang diuji (ablasi faktor apa saja, 3 seed), temuan utama dengan angka (misalnya "GRU terbaik dengan test MAE $x plus.minus y$, turun $z$ % dari acuan"), dan satu kalimat kesimpulan.]
   ],
   // Satu entri per anggota (maks. 3). Hapus yang tidak dipakai.
   authors: (
-    (name: "Nama Anggota 1", department: [NIM 1221400xx], organization: [Teknik Telekomunikasi, ITERA], email: "email@student.itera.ac.id"),
-    (name: "Nama Anggota 2", department: [NIM 1221400xx], organization: [Teknik Telekomunikasi, ITERA], email: "email@student.itera.ac.id"),
-    (name: "Nama Anggota 3", department: [NIM 1221400xx], organization: [Teknik Telekomunikasi, ITERA], email: "email@student.itera.ac.id"),
+    (name: "Tyodonrau", department: [NIM 124400052], organization: [Teknik Telekomunikasi, ITERA], email: "tyodonrau.124400052@student.itera.ac.id"),
+    (name: "Adryan Ari Nur Hakim P", department: [NIM 124400026], organization: [Teknik Telekomunikasi, ITERA], email: "email@student.itera.ac.id"),
+    (name: "Joan Felix Tampubolon", department: [NIM 124400088], organization: [Teknik Telekomunikasi, ITERA], email: "email@student.itera.ac.id"),
   ),
   index-terms: ("prediksi trafik seluler", "RNN", "LSTM", "GRU", "studi ablasi"),
   bibliography: bibliography("references.bib", title: [Pustaka]),
@@ -32,7 +32,14 @@
 )
 
 = Pendahuluan
-#petunjuk[Mengapa operator perlu meramal trafik per sel? Mengapa model sekuensial (RNN, LSTM @hochreiter1997lstm, GRU @cho2014gru) dibandingkan dengan ANN? Apa itu studi ablasi dan mengapa penting? Tutup dengan daftar kontribusi laporan ini (2–3 butir). Maks. 0,5 kolom.]
+
+Prediksi trafik seluler merupakan salah satu aspek penting dalam pengelolaan jaringan telekomunikasi. Peningkatan penggunaan layanan digital menyebabkan kebutuhan jaringan berubah dari waktu ke waktu dan berbeda pada setiap wilayah. Informasi mengenai pola trafik dapat membantu operator memahami permintaan jaringan, merencanakan kapasitas, serta mengalokasikan sumber daya secara lebih efisien. Oleh karena itu, diperlukan metode prediksi yang mampu mempelajari pola historis trafik untuk memperkirakan kebutuhan jaringan pada periode berikutnya.
+
+Trafik seluler memiliki karakteristik data deret waktu (*time series*) karena nilai pengamatan pada suatu waktu dapat berkaitan dengan nilai pada waktu sebelumnya. Salah satu pendekatan yang dapat digunakan untuk mempelajari pola tersebut adalah jaringan saraf tiruan. *Artificial Neural Network* (ANN) dapat digunakan sebagai model pembanding, sedangkan *Recurrent Neural Network* (RNN) dirancang untuk memproses data berurutan dengan mempertimbangkan informasi dari langkah waktu sebelumnya. Namun, RNN standar dapat mengalami kesulitan dalam mempelajari ketergantungan temporal jangka panjang. Untuk mengatasi keterbatasan tersebut, *Long Short-Term Memory* (LSTM) menggunakan mekanisme gerbang untuk mengatur penyimpanan dan penggunaan informasi sepanjang urutan waktu @hochreiter1997lstm. Sementara itu, *Gated Recurrent Unit* (GRU) menggunakan mekanisme gerbang dengan struktur yang lebih ringkas untuk mempelajari hubungan temporal @cho2014gru. Perbandingan keempat arsitektur tersebut diperlukan untuk mengetahui perbedaan kinerjanya dalam memprediksi trafik seluler.
+
+Penelitian ini dirancang menggunakan dataset trafik seluler Kota Milan dari Telecom Italia yang menyediakan informasi penggunaan jaringan berdasarkan lokasi dan waktu @barlacchi2015milan. Fokus pengamatan diarahkan pada kawasan Taman Kota Parco Sempione, Milan. Pemilihan kawasan ini bertujuan untuk mengkaji pola trafik seluler pada wilayah tertentu, bukan hanya pada skala kota secara keseluruhan. Sebelum eksperimen dilakukan, wilayah pengamatan perlu dicocokkan dengan metadata dan koordinat grid pada dataset agar data yang digunakan benar-benar mewakili kawasan yang diteliti.
+
+Penelitian ini membandingkan ANN, RNN, LSTM, dan GRU menggunakan prosedur pelatihan dan evaluasi yang konsisten. Kinerja model direncanakan diukur menggunakan *Mean Absolute Error* (MAE), *Root Mean Squared Error* (RMSE), dan *Mean Absolute Percentage Error* (MAPE). Selain membandingkan arsitektur, penelitian ini menerapkan studi ablasi dengan mengubah konfigurasi tertentu secara terencana untuk mengamati pengaruhnya terhadap hasil prediksi. Pengujian juga dirancang untuk mengevaluasi kemampuan generalisasi model pada lokasi pengamatan yang berbeda. Dengan demikian, analisis diharapkan dapat memberikan gambaran mengenai kinerja model pada wilayah utama sekaligus keterbatasannya ketika diterapkan pada wilayah lain.
 
 = Data dan Metode
 
